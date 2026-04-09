@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Insights | Tech, AI, Cybersecurity & Gaming</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-cyan: #00f5ff;
+            --neon-gold: #f0c040;
+            --dark-bg: #050a0f;
+            --dark-panel: #080e18;
+            --dark-card: #0a1520;
+            --text-primary: #e8f4f8;
+            --text-muted: #6a8fa0;
+            --border-dim: rgba(0,200,210,0.2);
+            --glow-cyan: 0 0 20px rgba(0,245,255,0.4);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            font-family: 'Rajdhani', sans-serif;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(180deg, rgba(5,10,15,0.97) 0%, rgba(5,10,15,0.6) 100%);
+            border-bottom: 1px solid var(--border-dim);
+            padding: 18px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(12px);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Orbitron', monospace;
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: var(--neon-cyan);
+            text-shadow: var(--glow-cyan);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            font-family: 'Share Tech Mono', monospace;
+            color: var(--text-muted);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--neon-cyan);
+            text-shadow: var(--glow-cyan);
+        }
+        
+        .cta-btn {
+            background: rgba(0,245,255,0.1);
+            border: 1px solid var(--neon-cyan);
+            color: var(--neon-cyan);
+            padding: 8px 20px;
+            text-decoration: none;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            clip-path: polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);
+            transition: all 0.2s;
+        }
+        
+        .cta-btn:hover {
+            background: rgba(0,245,255,0.2);
+            box-shadow: var(--glow-cyan);
+        }
+        
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: var(--dark-panel);
+            border-bottom: 1px solid var(--border-dim);
+        }
+        
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--neon-cyan);
+            text-shadow: 0 0 40px rgba(0,245,255,0.5);
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Main */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            color: var(--text-primary);
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-dim);
+        }
+        
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .post-card {
+            background: var(--dark-card);
+            border: 1px solid var(--border-dim);
+            padding: 30px;
+            transition: all 0.3s;
+        }
+        
+        .post-card:hover {
+            border-color: var(--neon-cyan);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        
+        .post-card a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .post-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        
+        .post-card:hover h3 {
+            color: var(--neon-cyan);
+        }
+        
+        .post-date {
+            font-family: 'Share Tech Mono', monospace;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+        
+        .post-category {
+            color: var(--neon-gold);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-panel);
+            border-top: 1px solid var(--border-dim);
+            padding: 40px 5%;
+            text-align: center;
+        }
+        
+        .footer-text {
+            font-family: 'Share Tech Mono', monospace;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .posts-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">CYBER INSIGHTS</a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+            </nav>
+            <a href="https://nexusescrow.netlify.app" target="_blank" class="cta-btn">Nexus Escrow</a>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <h1>CYBER INSIGHTS</h1>
+        <p>Your source for Tech, AI, Cybersecurity & Gaming. Stay informed with the latest insights and trends.</p>
+    </section>
+    
+    <main id="categories">
+        <h2 class="section-title">Latest Posts</h2>
+        <div class="posts-grid" id="posts-container">
+            <p style="color: var(--text-muted);">Loading posts...</p>
+        </div>
+    </main>
+    
+    <footer>
+        <p class="footer-text">
+            &copy; 2026 Cyber Insights. All rights reserved.<br>
+            <a href="https://nexusescrow.netlify.app" target="_blank">Nexus Escrow</a>
+        </p>
+    </footer>
+    
+    <script>
+        // Auto-generate posts list from files
+        async function loadPosts() {
+            const container = document.getElementById('posts-container');
+            try {
+                const response = await fetch('posts/');
+                const text = await response.text();
+                
+                // Parse file list (basic approach)
+                const files = text.match(/href="([^"]+\.html)"/g) || [];
+                const posts = files.map(f => {
+                    const match = f.match(/href="([^"]+)"/);
+                    return match ? match[1] : null;
+                }).filter(Boolean);
+                
+                if (posts.length === 0) {
+                    container.innerHTML = '<p style="color: var(--text-muted);">No posts yet. Check back soon!</p>';
+                    return;
+                }
+                
+                container.innerHTML = posts.map(post => `
+                    <article class="post-card">
+                        <a href="${post}">
+                            <span class="post-category">Blog Post</span>
+                            <h3>${post.replace('.html', '').replace(/-/g, ' ').replace(/^\d{4}-\d{2}-\d{2}\s*/, '').substring(0, 60)}</h3>
+                            <span class="post-date">Click to read</span>
+                        </a>
+                    </article>
+                `).join('');
+            } catch (e) {
+                container.innerHTML = '<p style="color: var(--text-muted);">Unable to load posts.</p>';
+            }
+        }
+        loadPosts();
+    </script>
+</body>
+</html>
