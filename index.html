@@ -27,7 +27,6 @@
             font-family: 'Rajdhani', sans-serif;
         }
         
-        /* Header */
         header {
             background: linear-gradient(180deg, rgba(5,10,15,0.97) 0%, rgba(5,10,15,0.6) 100%);
             border-bottom: 1px solid var(--border-dim);
@@ -93,7 +92,6 @@
             box-shadow: var(--glow-cyan);
         }
         
-        /* Hero */
         .hero {
             text-align: center;
             padding: 80px 20px;
@@ -117,7 +115,6 @@
             margin: 0 auto;
         }
         
-        /* Main */
         main {
             max-width: 1200px;
             margin: 0 auto;
@@ -180,9 +177,10 @@
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
+            display: block;
+            margin-bottom: 10px;
         }
         
-        /* Footer */
         footer {
             background: var(--dark-panel);
             border-top: 1px solid var(--border-dim);
@@ -222,8 +220,29 @@
     
     <main id="categories">
         <h2 class="section-title">Latest Posts</h2>
-        <div class="posts-grid" id="posts-container">
-            <p style="color: var(--text-muted);">Loading posts...</p>
+        <div class="posts-grid">
+            
+        <article class="post-card">
+            <a href="posts/2026-04-09-ai-powered-chat-app-restores-voice-notes-a-step-to.html">
+                <span class="post-category">Blog Post</span>
+                <h3>Ai Powered Chat App Restores Voice Notes A Step To</h3>
+                <span class="post-date">2026-04-09</span>
+            </a>
+        </article>
+        <article class="post-card">
+            <a href="posts/2026-04-09-budget-gaming-laptop-deals-unlocking-the-ultimate-.html">
+                <span class="post-category">Blog Post</span>
+                <h3>Budget Gaming Laptop Deals Unlocking The Ultimate </h3>
+                <span class="post-date">2026-04-09</span>
+            </a>
+        </article>
+        <article class="post-card">
+            <a href="posts/2026-04-09-cyber-heist-hacker-s-700-000-scam-on-u-k-energy-fi.html">
+                <span class="post-category">Blog Post</span>
+                <h3>Cyber Heist Hacker S 700 000 Scam On U K Energy Fi</h3>
+                <span class="post-date">2026-04-09</span>
+            </a>
+        </article>
         </div>
     </main>
     
@@ -233,41 +252,5 @@
             <a href="https://nexusescrow.netlify.app" target="_blank">Nexus Escrow</a>
         </p>
     </footer>
-    
-    <script>
-        // Auto-generate posts list from files
-        async function loadPosts() {
-            const container = document.getElementById('posts-container');
-            try {
-                const response = await fetch('posts/');
-                const text = await response.text();
-                
-                // Parse file list (basic approach)
-                const files = text.match(/href="([^"]+\.html)"/g) || [];
-                const posts = files.map(f => {
-                    const match = f.match(/href="([^"]+)"/);
-                    return match ? match[1] : null;
-                }).filter(Boolean);
-                
-                if (posts.length === 0) {
-                    container.innerHTML = '<p style="color: var(--text-muted);">No posts yet. Check back soon!</p>';
-                    return;
-                }
-                
-                container.innerHTML = posts.map(post => `
-                    <article class="post-card">
-                        <a href="${post}">
-                            <span class="post-category">Blog Post</span>
-                            <h3>${post.replace('.html', '').replace(/-/g, ' ').replace(/^\d{4}-\d{2}-\d{2}\s*/, '').substring(0, 60)}</h3>
-                            <span class="post-date">Click to read</span>
-                        </a>
-                    </article>
-                `).join('');
-            } catch (e) {
-                container.innerHTML = '<p style="color: var(--text-muted);">Unable to load posts.</p>';
-            }
-        }
-        loadPosts();
-    </script>
 </body>
 </html>
