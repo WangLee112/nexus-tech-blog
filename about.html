@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Cyber Insights</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-cyan: #00f5ff;
+            --neon-gold: #f0c040;
+            --dark-bg: #050a0f;
+            --dark-panel: #080e18;
+            --dark-card: #0a1520;
+            --text-primary: #e8f4f8;
+            --text-muted: #6a8fa0;
+            --border-dim: rgba(0,200,210,0.2);
+            --glow-cyan: 0 0 20px rgba(0,245,255,0.4);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--dark-bg); color: var(--text-primary); font-family: 'Rajdhani', sans-serif; }
+        header { background: linear-gradient(180deg, rgba(5,10,15,0.97) 0%, rgba(5,10,15,0.6) 100%); border-bottom: 1px solid var(--border-dim); padding: 18px 5%; position: sticky; top: 0; z-index: 100; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Orbitron', monospace; font-weight: 900; font-size: 1.5rem; color: var(--neon-cyan); text-shadow: var(--glow-cyan); text-decoration: none; }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { font-family: 'Share Tech Mono', monospace; color: var(--text-muted); text-decoration: none; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--neon-cyan); text-shadow: var(--glow-cyan); }
+        .cta-btn { background: rgba(0,245,255,0.1); border: 1px solid var(--neon-cyan); color: var(--neon-cyan); padding: 8px 20px; text-decoration: none; font-family: 'Share Tech Mono', monospace; font-size: 0.75rem; text-transform: uppercase; clip-path: polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%); transition: all 0.2s; }
+        .cta-btn:hover { background: rgba(0,245,255,0.2); box-shadow: var(--glow-cyan); }
+        main { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        h1 { font-family: 'Orbitron', sans-serif; font-size: 2.5rem; color: var(--neon-cyan); margin-bottom: 30px; }
+        .content { background: var(--dark-card); border: 1px solid var(--border-dim); padding: 40px; }
+        h2 { font-family: 'Orbitron', sans-serif; color: var(--neon-gold); margin: 30px 0 15px; }
+        p { margin-bottom: 20px; line-height: 1.7; color: var(--text-primary); }
+        ul { margin: 20px 0; padding-left: 30px; }
+        li { margin-bottom: 10px; color: var(--text-primary); }
+        footer { background: var(--dark-panel); border-top: 1px solid var(--border-dim); padding: 40px 5%; text-align: center; }
+        .footer-text { font-family: 'Share Tech Mono', monospace; color: var(--text-muted); font-size: 0.85rem; }
+        @media (max-width: 768px) { h1 { font-size: 1.8rem; } .content { padding: 20px; } .nav-links { display: none; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">CYBER INSIGHTS</a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+            </nav>
+            <a href="https://nexusescrow.netlify.app" target="_blank" class="cta-btn">Nexus Escrow</a>
+        </div>
+    </header>
+    <main>
+        <h1>About Cyber Insights</h1>
+        <div class="content">
+            <p>Welcome to Cyber Insights, your premier destination for the latest insights in Technology, Artificial Intelligence, Cybersecurity, and Gaming.</p>
+            <h2>Our Mission</h2>
+            <p>At Cyber Insights, we believe in making complex tech topics accessible to everyone. Our team of experts curates and simplifies the latest news, trends, and developments from the world of technology.</p>
+            <h2>What We Cover</h2>
+            <ul>
+                <li><strong>Tech:</strong> Latest gadgets, software updates, and tech industry news</li>
+                <li><strong>AI:</strong> Artificial intelligence breakthroughs, tools, and ethical discussions</li>
+                <li><strong>Cybersecurity:</strong> Protecting your digital life with the latest security practices</li>
+                <li><strong>Gaming:</strong> Game reviews, industry news, and esports updates</li>
+            </ul>
+            <h2>Stay Connected</h2>
+            <p>Follow us for daily updates and deep dives into the topics that matter most in the tech world.</p>
+            <p>Questions or suggestions? We'd love to hear from you!</p>
+        </div>
+    </main>
+    <footer>
+        <p class="footer-text">&copy; 2026 Cyber Insights. All rights reserved.</p>
+    </footer>
+</body>
+</html>
